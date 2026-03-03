@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>ZCOOL_FONT_PLACEHOLDER</style>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Noto Sans CJK SC', sans-serif;
+    background: #FEFCF7;
+    color: #2A2A2A;
+    width: 750px;
+  }
+
+  .ticket {
+    width: 750px;
+    padding: 56px 56px;
+    background: #FEFCF7;
+  }
+
+  .hw { font-family: 'ZCOOL KuaiLe', 'Noto Sans CJK SC', sans-serif; }
+  .mono { font-family: 'Noto Sans Mono CJK SC', monospace; }
+
+  .t-header {
+    text-align: center;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    border-bottom: 2px dashed #D0C8B8;
+  }
+
+  .t-brand { font-size: 14px; letter-spacing: 6px; color: #AAA; margin-bottom: 20px; }
+  .t-title { font-size: 44px; margin-bottom: 8px; }
+  .t-date { font-size: 18px; color: #888; }
+  .t-streak {
+    display: inline-block; margin-top: 18px; padding: 8px 24px;
+    border: 2px solid #2A2A2A; border-radius: 100px; font-size: 18px; letter-spacing: 1px;
+  }
+
+  .t-hero {
+    padding: 32px 0; border-bottom: 2px dashed #D0C8B8; text-align: center;
+  }
+  .t-hero-label { font-size: 22px; color: #999; margin-bottom: 8px; }
+  .t-hero-num { font-size: 100px; font-weight: 900; line-height: 1; letter-spacing: -3px; margin-bottom: 4px; }
+  .t-hero-sub { font-size: 20px; color: #888; margin-top: 8px; margin-bottom: 24px; }
+  .t-hero-over {
+    display: inline-block; font-size: 28px; color: #C0392B;
+    padding: 10px 36px; border: 3px solid #C0392B; border-radius: 8px; transform: rotate(-2deg);
+  }
+  .t-hero-over.ok { color: #27AE60; border-color: #27AE60; }
+
+  .t-meals { padding: 28px 0; border-bottom: 2px dashed #D0C8B8; }
+  .t-sec-label { font-size: 24px; color: #999; margin-bottom: 20px; }
+  .t-meal { margin-bottom: 24px; }
+  .t-meal:last-child { margin-bottom: 0; }
+  .t-meal-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+  .t-meal-name { font-size: 24px; }
+  .t-meal-time { font-size: 16px; color: #999; margin-left: 8px; }
+  .t-meal-cal-row { display: flex; align-items: baseline; gap: 4px; }
+  .t-meal-cal { font-size: 30px; font-weight: 700; }
+  .t-meal-cal.ok { color: #2A2A2A; }
+  .t-meal-cal.over { color: #C0392B; }
+  .t-meal-cal-unit { font-size: 15px; color: #AAA; }
+  .t-meal-food { font-size: 18px; color: #888; line-height: 1.5; margin-top: 4px; }
+
+  .t-review { padding: 28px 0; border-bottom: 2px dashed #D0C8B8; }
+  .t-review-text { font-size: 26px; line-height: 2; color: #444; }
+  .t-review-text strong { color: #2A2A2A; }
+
+  .t-tomorrow { padding: 28px 0 16px; }
+  .t-tmr-item { display: flex; gap: 14px; margin-bottom: 18px; align-items: baseline; }
+  .t-tmr-item:last-child { margin-bottom: 0; }
+  .t-tmr-check { font-size: 26px; flex-shrink: 0; }
+  .t-tmr-text { font-size: 26px; line-height: 1.7; color: #333; }
+  .t-tmr-text strong { color: #2A2A2A; }
+
+  .t-footer {
+    text-align: center; padding-top: 28px; margin-top: 8px;
+    border-top: 2px dashed #D0C8B8;
+  }
+  .barcode { display: flex; justify-content: center; gap: 2px; margin-bottom: 12px; }
+  .barcode div { width: 2px; background: #2A2A2A; border-radius: 1px; }
+  .t-footer-text { font-size: 13px; color: #AAA; letter-spacing: 3px; }
+  .t-footer-text span { color: #2A2A2A; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="ticket">
+
+  <div class="t-header">
+    <div class="t-brand">小 犀 牛 &nbsp; A I</div>
+    <div class="t-title hw">减重日报</div>
+    <div class="t-date mono">2026-02-27 FRI</div>
+    <div class="t-streak hw">连续打卡 Day <span class="mono">4</span></div>
+  </div>
+
+  <div class="t-hero">
+    <div class="t-hero-label hw">今天吃了</div>
+    <div class="t-hero-num mono">1655</div>
+    <div class="t-hero-sub"><span class="hw">千卡</span> / <span class="hw">目标</span> <span class="mono">1500</span></div>
+    <div class="t-hero-over hw">超出 <span class="mono">155</span> kcal</div>
+  </div>
+
+  <div class="t-meals">
+    <div class="t-sec-label hw">三餐明细</div>
+    <div class="t-meal">
+      <div class="t-meal-row">
+        <div class="t-meal-name hw">早餐<span class="t-meal-time mono">07:47</span></div>
+        <div class="t-meal-cal-row"><div class="t-meal-cal over mono">410</div><div class="t-meal-cal-unit">kcal</div></div>
+      </div>
+      <div class="t-meal-food">鸡蛋 + 牛奶 + 玉米 + 核桃包 + 胡萝卜豆芽菜花</div>
+    </div>
+    <div class="t-meal">
+      <div class="t-meal-row">
+        <div class="t-meal-name hw">午餐<span class="t-meal-time mono">11:32</span></div>
+        <div class="t-meal-cal-row"><div class="t-meal-cal ok mono">525</div><div class="t-meal-cal-unit">kcal</div></div>
+      </div>
+      <div class="t-meal-food">半碗米饭 + 茄子豆角 + 日本豆腐</div>
+    </div>
+    <div class="t-meal">
+      <div class="t-meal-row">
+        <div class="t-meal-name hw">晚餐<span class="t-meal-time mono">20:00</span></div>
+        <div class="t-meal-cal-row"><div class="t-meal-cal over mono">720</div><div class="t-meal-cal-unit">kcal</div></div>
+      </div>
+      <div class="t-meal-food">米饭 + 腐竹 + 炸豆腐/丸子 + 笋丝炒肉</div>
+    </div>
+  </div>
+
+  <div class="t-review">
+    <div class="t-sec-label hw">今日点评</div>
+    <div class="t-review-text hw">午餐听建议把米饭减半，<strong>执行力很好</strong>。晚餐油炸类和腐竹热量太高，一餐占全天 <span class="mono">48%</span>。超标<strong>全在晚餐</strong>——换成清炒蔬菜+瘦肉就是完美的一天。</div>
+  </div>
+
+  <div class="t-tomorrow">
+    <div class="t-sec-label hw">明天重点</div>
+    <div class="t-tmr-item">
+      <span class="t-tmr-check">☐</span>
+      <div class="t-tmr-text hw">晚餐<strong>避开油炸和腐竹</strong>，换蒸煮类蛋白质</div>
+    </div>
+    <div class="t-tmr-item">
+      <span class="t-tmr-check">☐</span>
+      <div class="t-tmr-text hw">早餐主食只选一种——玉米<strong>或</strong>核桃包，不叠加</div>
+    </div>
+  </div>
+
+  <div class="t-footer">
+    <div class="barcode">
+      <div style="height:36px;"></div><div style="height:30px;width:1px;"></div>
+      <div style="height:36px;width:3px;"></div><div style="height:30px;width:1px;"></div>
+      <div style="height:36px;"></div><div style="height:36px;width:1px;"></div>
+      <div style="height:30px;width:3px;"></div><div style="height:36px;"></div>
+      <div style="height:30px;width:1px;"></div><div style="height:36px;width:3px;"></div>
+      <div style="height:36px;"></div><div style="height:30px;width:1px;"></div>
+      <div style="height:36px;"></div><div style="height:36px;width:3px;"></div>
+      <div style="height:30px;width:1px;"></div><div style="height:36px;"></div>
+      <div style="height:30px;width:1px;"></div><div style="height:36px;width:3px;"></div>
+      <div style="height:36px;"></div><div style="height:30px;"></div>
+      <div style="height:36px;width:1px;"></div><div style="height:30px;width:3px;"></div>
+      <div style="height:36px;"></div><div style="height:36px;width:1px;"></div>
+      <div style="height:30px;width:3px;"></div><div style="height:36px;"></div>
+      <div style="height:30px;width:1px;"></div><div style="height:36px;width:3px;"></div>
+      <div style="height:36px;"></div><div style="height:30px;"></div>
+    </div>
+    <div class="t-footer-text">POWERED BY <span>小犀牛</span> AI · <span class="mono">2026.02.27</span></div>
+  </div>
+
+</div>
+</body>
+</html>
