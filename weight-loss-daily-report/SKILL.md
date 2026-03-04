@@ -30,7 +30,7 @@ This skill generates a visually polished "receipt ticket" style daily report for
 
 Read the user's uploaded chat log or meal data. Also read the following reference files:
 - `references/daily-log/YYYY-MM-DD.md` — 当日已记录的饮食和体重数据
-- `references/diet-plan.md` — 用户的饮食方案和体重目标
+- `references/diet-plan.md` — 用户的个人减重方案和体重目标
 - `references/weight-log.md` — 用户的历史体重记录
 
 Extract for the target date:
