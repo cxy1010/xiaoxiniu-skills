@@ -28,8 +28,15 @@ This skill generates a visually polished "receipt ticket" style daily report for
 
 ### Step 1: Parse the Input
 
-Read the user's uploaded chat log or meal data. Extract for the target date:
+Read the user's uploaded chat log or meal data. Also read the following reference files:
+- `references/daily-log/YYYY-MM-DD.md` — 当日已记录的饮食和体重数据
+- `references/diet-plan.md` — 用户的饮食方案和体重目标
+- `references/weight-log.md` — 用户的历史体重记录
+
+Extract for the target date:
 - **Meals**: breakfast, lunch, dinner (time, food items, estimated calories)
+- **Weight**: today's weight if recorded (from daily-log or weight-log)
+- **Weight trend**: recent weight entries from weight-log for trend display
 - **Calorie target**: default 1500 kcal if not specified
 - **Streak**: consecutive check-in days
 - **Date**: the report date
@@ -44,7 +51,7 @@ For each meal, determine:
 - Total daily intake vs target
 
 Generate:
-- **Today's review** (今日点评): 2-3 sentences. Highlight what was done well, identify the main problem, suggest a specific swap. Use warm encouraging tone.
+- **Today's review** (今日点评): 2-3 sentences. Highlight what was done well, identify the main problem, suggest a specific swap. If weight was recorded today, incorporate weight trend into the review (e.g., "体重稳步下降中" or "体重小幅波动属正常"). Use warm encouraging tone.
 - **Tomorrow's focus** (明天重点): 1-2 concrete actionable items as checkbox tasks.
 
 ### Step 3: Install Font
@@ -75,6 +82,9 @@ Use the template structure in `assets/template.html`. Fill in the data placehold
 {{TARGET_KCAL}}     - calorie target (default 1500)
 {{OVER_UNDER}}      - "超出 XXX kcal"（红色）或 "目标达成"（绿色）
 {{OVER_CLASS}}      - "over" or "ok" (CSS class for coloring)
+{{TODAY_WEIGHT}}    - 今日体重（如 72.5），无记录则显示 "--"
+{{WEIGHT_CHANGE}}   - 与上次对比（如 "↓0.5" 或 "↑0.3" 或 "--"）
+{{WEIGHT_CLASS}}    - "down"（绿色）、"up"（红色）或 "neutral"
 {{BREAKFAST_TIME}}  - e.g., 07:47
 {{BREAKFAST_KCAL}}  - calorie number
 {{BREAKFAST_CLASS}} - "over" or "ok"
